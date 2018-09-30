@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2018 | Hexo</title>
+  <title>n sum | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="Two SumExample: Given nums=[2,7,11,15],target=9,nums[0]+nums[1]=9;return [0,1]     思路：排序后，双指针遍历，可以去重1while (i &amp;lt; nums.length - 1 &amp;amp;&amp;amp; nums[i] == nums[i + 1]) i++; 或者存入HashMap&amp;lt;nums[i],i&amp;gt;">
+<meta name="keywords" content="leetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="n sum">
+<meta property="og:url" content="http://yoursite.com/2018/09/30/n-sum/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Two SumExample: Given nums=[2,7,11,15],target=9,nums[0]+nums[1]=9;return [0,1]     思路：排序后，双指针遍历，可以去重1while (i &amp;lt; nums.length - 1 &amp;amp;&amp;amp; nums[i] == nums[i + 1]) i++; 或者存入HashMap&amp;lt;nums[i],i&amp;gt;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-30T09:16:49.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="n sum">
+<meta name="twitter:description" content="Two SumExample: Given nums=[2,7,11,15],target=9,nums[0]+nums[1]=9;return [0,1]     思路：排序后，双指针遍历，可以去重1while (i &amp;lt; nums.length - 1 &amp;amp;&amp;amp; nums[i] == nums[i + 1]) i++; 或者存入HashMap&amp;lt;nums[i],i&amp;gt;">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,97 +65,77 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/30/n-sum/" class="archive-article-date">
-  <time datetime="2018-09-30T08:37:24.000Z" itemprop="datePublished">Sep 30</time>
+        <section id="main"><article id="post-n-sum" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/30/n-sum/" class="article-date">
+  <time datetime="2018-09-30T08:37:24.000Z" itemprop="datePublished">2018-09-30</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/30/n-sum/">n sum</a>
+    <h1 class="article-title" itemprop="name">
+      n sum
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/28/第一篇/" class="archive-article-date">
-  <time datetime="2018-09-28T08:35:18.000Z" itemprop="datePublished">Sep 28</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/28/第一篇/">第一篇</a>
-    </h1>
-  
+        <ol>
+<li>Two Sum<br>Example:<blockquote>
+<p>Given nums=[2,7,11,15],target=9,<br>nums[0]+nums[1]=9;<br>return [0,1]</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>思路：排序后，双指针遍历，可以去重<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">while (i &lt; nums.length - 1 &amp;&amp; nums[i] == nums[i + 1]) i++;</span><br></pre></td></tr></table></figure></p>
+<p>或者存入HashMap&lt;nums[i],i&gt;,查找target-nums[i],</p>
+<ol start="2">
+<li>3Sum<br>Example:<blockquote>
+<p>Given nums=[-1, 0, 1, 2, -1, -4],<br>return<br>[<br>　[-1,-,1]<br>　[-1,-1,2]<br>]</p>
+</blockquote>
+</li>
+</ol>
+<p>思路：固定第一个数字i，遍历剩余的,i++;</p>
+<hr>
+<ol start="3">
+<li>4Sum<br>Example:<blockquote>
+<p>Given nums=[1, 0, -1, 0, -2, 2],target=0.<br>return :<br>[<br>　[-1,0,0,1]<br>　[-2,-1.1,2]<br>　[-2,0,0,2]<br>]</p>
+</blockquote>
+</li>
+</ol>
+<p>思路：在三个数的基础上多了一个循环。注意可以进行优化速度<br>排序后，<code>nums[i]+nums[i+1]+nums[i+2]+nums[i+3]&gt;target;i++;</code>直接结束<br><code>nums[i]+nums[j]+nums[nums.length-2]+nums[nums.length-1]&lt;target;continue;</code>直接进入下一轮循环，</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/16/testsite/" class="archive-article-date">
-  <time datetime="2018-09-16T14:14:43.000Z" itemprop="datePublished">Sep 16</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/16/testsite/">testsite</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/05/22/hello-world/" class="archive-article-date">
-  <time datetime="2018-05-22T15:41:41.050Z" itemprop="datePublished">May 22</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/30/n-sum/" data-id="cjmoprc2k0001tgdrfh1iln0s" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/22/hello-world/">Hello World</a>
-    </h1>
-  
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetCode/">leetCode</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/09/28/第一篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">第一篇</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
