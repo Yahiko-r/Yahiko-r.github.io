@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="backtracking 1. Permutation在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
+  <meta name="description" content="backtracking 1. Permutation在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。">
 <meta name="keywords" content="backtracking">
 <meta property="og:type" content="article">
 <meta property="og:title" content="algorithm">
 <meta property="og:url" content="http://yoursite.com/2018/11/27/algorithm/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="backtracking 1. Permutation在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
+<meta property="og:description" content="backtracking 1. Permutation在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-27T11:23:01.046Z">
+<meta property="og:updated_time" content="2018-11-27T11:26:56.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="algorithm">
-<meta name="twitter:description" content="backtracking 1. Permutation在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162">
+<meta name="twitter:description" content="backtracking 1. Permutation在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。">
 
 
 
@@ -226,7 +226,7 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
   </li>
         
         
@@ -234,7 +234,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
   </li>
 
       
@@ -320,14 +320,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-11-27 09:57:41 / Modified: 19:23:01" itemprop="dateCreated datePublished" datetime="2018-11-27T09:57:41+08:00">2018-11-27</time>
+              <time title="Post created: 2018-11-27 09:57:41 / Updated at: 19:26:56" itemprop="dateCreated datePublished" datetime="2018-11-27T09:57:41+08:00">2018-11-27</time>
             
 
             
@@ -367,6 +367,7 @@
       
         <h3 id="backtracking"><a href="#backtracking" class="headerlink" title="backtracking"></a>backtracking</h3><hr>
 <h4 id="1-Permutation"><a href="#1-Permutation" class="headerlink" title="1. Permutation"></a>1. Permutation</h4><p>在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。</p>
+<a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//nums不需要排序，但是不能有重复元素</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; list,List&lt;Integer&gt; tempList,<span class="keyword">int</span>[] nums)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tempList.size()==nums.length)&#123;</span><br><span class="line">        list.add(<span class="keyword">new</span> ArrayList&lt;&gt;(tempList));<span class="comment">//在很多的递归过程中都需要注意：如果List&lt;Integer&gt; newList=tempList，指向的还是同一个对象，导致最后的结果中都是同一个元素。</span></span><br><span class="line">    	<span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(tempList.contains(nums[i]))<span class="keyword">continue</span>;<span class="comment">//nums中不能有重复元素。前tempList.size()个元素都要重新过一遍，浪费时间，下面方法用的是复制数组（去掉加入到tempLis中的元素，只剩下没有加入的）</span></span><br><span class="line">        tempList.add(nums[i]);</span><br><span class="line">        backtracking(list,tempList,nums);</span><br><span class="line">        tempList.remove(tempList.size()-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当nums有重复元素的时候，在for循环中想办法两个重复变量相邻时候互换位置是同一个排列的重复情况</span></span><br><span class="line"><span class="comment">//容易想到用复制元素的方法，但每层都要额外的空间，</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res,List&lt;Integer&gt; tmp,<span class="keyword">int</span>[] nums,<span class="keyword">int</span> len)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(len==tmp.size())&#123;</span><br><span class="line">        res.add(<span class="keyword">new</span> ArrayList(tmp));</span><br><span class="line">       <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;nums[i]==nums[i-<span class="number">1</span>])<span class="keyword">continue</span>;<span class="comment">//此时跳过了重复元素，但是该重复元素后面还要用。</span></span><br><span class="line">        tmp.add(nums[i]);</span><br><span class="line">        backtrack(res,tmp,removedArray(nums,i),len);</span><br><span class="line">        tmp.remove(tmp.size()-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] removedArray(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> x)&#123;</span><br><span class="line">    <span class="keyword">int</span>[] re=<span class="keyword">new</span> <span class="keyword">int</span>[nums.length-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==x)<span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            re[j++]=nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//用一个数组标记数字是否已经用到</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> depth, <span class="keyword">int</span>[] nums, List&lt;List&lt;Integer&gt;&gt; ans, List&lt;Integer&gt; cur, <span class="keyword">boolean</span>[] used)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (depth == nums.length) &#123;</span><br><span class="line">            ans.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(cur));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (used[i] || (i &gt; <span class="number">0</span> &amp;&amp; nums[i - <span class="number">1</span>] == nums[i] &amp;&amp; !used[i - <span class="number">1</span>])) <span class="keyword">continue</span>;</span><br><span class="line">            used[i] = <span class="keyword">true</span>; cur.add(nums[i]);</span><br><span class="line">            solve(depth + <span class="number">1</span>, nums, ans, cur, used);</span><br><span class="line">            used[i] = <span class="keyword">false</span>; cur.remove(cur.size() - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//交换的思想，将整个数列看成两个部分，第一个数字和其余的数字，全排列只有两种情况，交换一下就行。对于其余的数字，依然采用这种方式，递归的求出全排列。</span></span><br><span class="line"><span class="comment">//c++</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">recursion</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; num, <span class="keyword">int</span> i, <span class="keyword">int</span> j, vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; &amp;res)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i == j-<span class="number">1</span>) &#123;</span><br><span class="line">            res.push_back(num);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = i; k &lt; j; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i != k &amp;&amp; num[i] == num[k]) <span class="keyword">continue</span>;</span><br><span class="line">            swap(num[i], num[k]);</span><br><span class="line">            recursion(num, i+<span class="number">1</span>, j, res);<span class="comment">//值传递，传递的是副本，不是同一个num</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt; permuteUnique(vector&lt;<span class="keyword">int</span>&gt; &amp;num) &#123;</span><br><span class="line">        sort(num.begin(), num.end());</span><br><span class="line">        vector&lt;vector&lt;<span class="keyword">int</span>&gt; &gt;res;</span><br><span class="line">        recursion(num, <span class="number">0</span>, num.size(), res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
@@ -456,10 +457,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -480,7 +481,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">6</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -503,7 +504,7 @@
                       
                     
                     <span class="site-state-item-count">4</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">Tags</span>
                   
                 </div>
               
@@ -572,7 +573,7 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
