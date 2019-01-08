@@ -108,21 +108,24 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="testsite">
-<meta property="og:url" content="http://yoursite.com/2018/09/16/testsite/index.html">
+  <meta name="description" content="左闭右开，缩小边界时，左边需要加1，右边不需要。 12345678public int search(int[] a,int start,int end,int target)&amp;#123;/ /前闭后开，    while(start&amp;lt;end)&amp;#123;        int mid=start+(end-start)/2;        if(a[mid]&amp;lt;target)start">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二分查找">
+<meta property="og:url" content="http://yoursite.com/2019/01/08/二分查找/index.html">
 <meta property="og:site_name" content="寒い">
+<meta property="og:description" content="左闭右开，缩小边界时，左边需要加1，右边不需要。 12345678public int search(int[] a,int start,int end,int target)&amp;#123;/ /前闭后开，    while(start&amp;lt;end)&amp;#123;        int mid=start+(end-start)/2;        if(a[mid]&amp;lt;target)start">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-16T14:14:43.824Z">
+<meta property="og:updated_time" content="2019-01-08T15:20:34.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="testsite">
+<meta name="twitter:title" content="二分查找">
+<meta name="twitter:description" content="左闭右开，缩小边界时，左边需要加1，右边不需要。 12345678public int search(int[] a,int start,int end,int target)&amp;#123;/ /前闭后开，    while(start&amp;lt;end)&amp;#123;        int mid=start+(end-start)/2;        if(a[mid]&amp;lt;target)start">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/16/testsite/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/08/二分查找/"/>
 
 
 
@@ -132,7 +135,7 @@
   };
 </script>
 
-  <title>testsite | 寒い</title>
+  <title>二分查找 | 寒い</title>
   
 
 
@@ -277,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/16/testsite/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/08/二分查找/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YAHIKO">
@@ -294,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">testsite
+          <h1 class="post-title" itemprop="name headline">二分查找
               
             
           </h1>
@@ -319,9 +322,13 @@
                 
               
 
-              <time title="Created: 2018-09-16 22:14:43" itemprop="dateCreated datePublished" datetime="2018-09-16T22:14:43+08:00">2018-09-16</time>
+              <time title="Created: 2019-01-08 22:01:52 / Modified: 23:20:34" itemprop="dateCreated datePublished" datetime="2019-01-08T22:01:52+08:00">2019-01-08</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -353,7 +360,22 @@
       
 
       
-        
+        <p>左闭右开，缩小边界时，左边需要加1，右边不需要。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] a,<span class="keyword">int</span> start,<span class="keyword">int</span> end,<span class="keyword">int</span> target)</span></span>&#123;/ /前闭后开，</span><br><span class="line">    <span class="keyword">while</span>(start&lt;end)&#123;</span><br><span class="line">        <span class="keyword">int</span> mid=start+(end-start)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(a[mid]&lt;target)start=mid+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            end=mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> start;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<p>升序的旋转，{1，2，3，4，5}旋转为 {3，4，5，1，2}，在查找某个数时，如果数组中没有重复的数字，把数组从中间分为两个部分。</p>
+<ul>
+<li>left&lt;right，说明没有旋转；<ul>
+<li>如果mid大于left的，说明左边是有序的；</li>
+<li>mid小于left，说明右边数组是有序的。</li>
+</ul>
+</li>
+<li>有重复数字的情况：如果left=mid=right，那么无法判断，只能顺序遍历。</li>
+<li>左边大于等于不能同时一起判断，=只能和&lt;在一块，即left&lt;=mid。右边反过来。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> length=nums.length;</span><br><span class="line">    <span class="keyword">int</span> left=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right=length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> mid=left;</span><br><span class="line">    <span class="keyword">while</span>(nums[left]&gt;=nums[right])&#123;</span><br><span class="line">        <span class="keyword">if</span>(right-left==<span class="number">1</span>)&#123;</span><br><span class="line">            mid=right;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums[left]&lt;=nums[mid])&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[left]==nums[mid]&amp;&amp;nums[left]==nums[right])&#123;</span><br><span class="line">                <span class="keyword">return</span> find(nums,left,right);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                left=mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            right=mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[mid];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min=nums[left];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=left+<span class="number">1</span>;i&lt;=right;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i]&lt;min)&#123;</span><br><span class="line">            min=nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> min;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -380,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/22/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/01/08/sort/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -389,10 +411,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/28/第一篇/" rel="prev" title="第一篇">
-                第一篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
