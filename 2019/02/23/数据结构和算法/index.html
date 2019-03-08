@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="图用邻接表来表示 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556public class Graph&amp;#123;	private final int V;	private int E;	private Bag&amp;lt;Integer&amp;gt;[">
+  <meta name="description" content="关于树的一些题目总结关于树，最常用的是遍历方法，前序，中序，后序，以及层序也就是广度优先 递归忽略。前序，中序，后序的非递归，需要用到栈 123456789101112131415public void preOrder(Node node)&amp;#123;    LinkedList&amp;lt;Node&amp;gt; list=new LinkedList&amp;lt;&amp;gt;();    Node p=node;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构与算法II">
-<meta property="og:url" content="http://yoursite.com/2018/12/14/数据结构与算法II/index.html">
+<meta property="og:title" content="数据结构和算法">
+<meta property="og:url" content="http://yoursite.com/2019/02/23/数据结构和算法/index.html">
 <meta property="og:site_name" content="寒い">
-<meta property="og:description" content="图用邻接表来表示 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556public class Graph&amp;#123;	private final int V;	private int E;	private Bag&amp;lt;Integer&amp;gt;[">
+<meta property="og:description" content="关于树的一些题目总结关于树，最常用的是遍历方法，前序，中序，后序，以及层序也就是广度优先 递归忽略。前序，中序，后序的非递归，需要用到栈 123456789101112131415public void preOrder(Node node)&amp;#123;    LinkedList&amp;lt;Node&amp;gt; list=new LinkedList&amp;lt;&amp;gt;();    Node p=node;">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-15T15:14:24.131Z">
+<meta property="og:updated_time" content="2019-02-23T16:18:17.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构与算法II">
-<meta name="twitter:description" content="图用邻接表来表示 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556public class Graph&amp;#123;	private final int V;	private int E;	private Bag&amp;lt;Integer&amp;gt;[">
+<meta name="twitter:title" content="数据结构和算法">
+<meta name="twitter:description" content="关于树的一些题目总结关于树，最常用的是遍历方法，前序，中序，后序，以及层序也就是广度优先 递归忽略。前序，中序，后序的非递归，需要用到栈 123456789101112131415public void preOrder(Node node)&amp;#123;    LinkedList&amp;lt;Node&amp;gt; list=new LinkedList&amp;lt;&amp;gt;();    Node p=node;">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/14/数据结构与算法II/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/02/23/数据结构和算法/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>数据结构与算法II | 寒い</title>
+  <title>数据结构和算法 | 寒い</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/数据结构与算法II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/数据结构和算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YAHIKO">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构与算法II
+          <h1 class="post-title" itemprop="name headline">数据结构和算法
               
             
           </h1>
@@ -322,7 +322,7 @@
                 
               
 
-              <time title="Created: 2018-12-14 23:00:43" itemprop="dateCreated datePublished" datetime="2018-12-14T23:00:43+08:00">2018-12-14</time>
+              <time title="Created: 2019-02-23 13:48:29" itemprop="dateCreated datePublished" datetime="2019-02-23T13:48:29+08:00">2019-02-23</time>
             
 
             
@@ -339,7 +339,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-15 23:14:24" itemprop="dateModified" datetime="2018-12-15T23:14:24+08:00">2018-12-15</time>
+                <time title="Modified: 2019-02-24 00:18:17" itemprop="dateModified" datetime="2019-02-24T00:18:17+08:00">2019-02-24</time>
               
             
           </span>
@@ -372,9 +372,12 @@
       
 
       
-        <h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>用邻接表来表示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">public class Graph&#123;</span><br><span class="line">	private final int V;</span><br><span class="line">	private int E;</span><br><span class="line">	private Bag&lt;Integer&gt;[] adj;</span><br><span class="line">	public Graph(int V)&#123;</span><br><span class="line">		this.V=V;thisE=0;</span><br><span class="line">		adj=(Bag&lt;Integer&gt;[])new Bag[V];</span><br><span class="line">		for(int v=0;v&lt;V;v++)</span><br><span class="line">			adj[v]=new Bag&lt;Integer&gt;();</span><br><span class="line">	&#125;</span><br><span class="line">	public int V()&#123;return V;&#125;</span><br><span class="line">	public int E()&#123;return E;&#125;</span><br><span class="line">	</span><br><span class="line">	public void addEdge(int v,int w)&#123;</span><br><span class="line">        adj[v].add(w);</span><br><span class="line">        adj[w].add(v);</span><br><span class="line">        E++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	int v();</span><br><span class="line">	int E();</span><br><span class="line">    public String toString();</span><br><span class="line">    public Graph(int v);</span><br><span class="line">    </span><br><span class="line">    public static int degree(Graph G,int v)&#123;</span><br><span class="line">        int degree=0;</span><br><span class="line">        for(int W:G.adj(v))degree++;</span><br><span class="line">        return degree;</span><br><span class="line">    &#125;</span><br><span class="line">    public static int maxDegree(Graph G)&#123;</span><br><span class="line">        int max=0;</span><br><span class="line">        for(int v=0;v&lt;G.V();v++)</span><br><span class="line">            if(degree(G,v)&gt;max)</span><br><span class="line">            	max=degree(G,v);</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">    public static int numberOfSelfLoops(Graph G)&#123;</span><br><span class="line">        int count=0;</span><br><span class="line">        for(int v=0;v&lt;G.V();v++)</span><br><span class="line">        	for(int w:G.adj(v))</span><br><span class="line">        		if(v==w)count++;</span><br><span class="line">        return count/2;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        String </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h3 id="关于树的一些题目总结"><a href="#关于树的一些题目总结" class="headerlink" title="关于树的一些题目总结"></a>关于树的一些题目总结</h3><p>关于树，最常用的是遍历方法，前序，中序，后序，以及层序也就是广度优先</p>
+<p>递归忽略。前序，中序，后序的非递归，需要用到栈</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">    LinkedList&lt;Node&gt; list=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    Node p=node;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span>(p!=<span class="keyword">null</span>||list.size()!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            System.out.print(p.val);<span class="comment">//对节点进行处理</span></span><br><span class="line">            list.push(p);</span><br><span class="line">            p=p.left;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;<span class="comment">//p节点为空，说明左子树走到底了，出栈，处理右节点。</span></span><br><span class="line">            Node node=list.pop;</span><br><span class="line">            p=node.right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>层序遍历需要用到队列。如果需要记录每一层，那么需要加上两个变量，一个记录当前层在队列中还剩下多少个，另一个记录下一层有多少个节点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(root==<span class="keyword">null</span>)<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">int</span> numNow=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> numNext=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        LinkedList&lt;Node&gt; queue=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.offer(root);</span><br><span class="line">        <span class="keyword">while</span>(queue.size()!=<span class="number">0</span>)&#123;</span><br><span class="line">            Node node=queue.poll();</span><br><span class="line">            numNow--;</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                queue.offer(node.left);</span><br><span class="line">                numNext++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                queue.offer(node.right);</span><br><span class="line">                numNext+=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(numNow==<span class="number">0</span>)&#123;</span><br><span class="line">                numNow=numNext;</span><br><span class="line">                numNext=<span class="number">0</span>;</span><br><span class="line">                <span class="comment">//对节点进行处理。</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//对节点进行处理</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br></pre></td></tr></table></figure>
+<h4 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h4>
       
     </div>
 
@@ -401,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/12/面试后/" rel="next" title="面试后">
-                <i class="fa fa-chevron-left"></i> 面试后
+              <a href="/2019/01/14/循环和递归/" rel="next" title="循环和递归">
+                <i class="fa fa-chevron-left"></i> 循环和递归
               </a>
             
           </div>
@@ -411,8 +414,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/08/sort/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/25/DP/" rel="prev" title="DP">
+                DP <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -552,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图"><span class="nav-number">1.</span> <span class="nav-text">图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于树的一些题目总结"><span class="nav-number">1.</span> <span class="nav-text">关于树的一些题目总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#哈夫曼树"><span class="nav-number">1.1.</span> <span class="nav-text">哈夫曼树</span></a></li></ol></li></ol></div>
             
 
           </div>
