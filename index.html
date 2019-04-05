@@ -277,6 +277,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/05/dp-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YAHIKO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寒い">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/05/dp-2/" itemprop="url">
+                  dp--2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-05 13:59:14 / Modified: 13:59:55" itemprop="dateCreated datePublished" datetime="2019-04-05T13:59:14+08:00">2019-04-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="dp–2"><a href="#dp–2" class="headerlink" title="dp–2"></a>dp–2</h3><p>背包问题。</p>
+<p>主要就是找递推形式。</p>
+<p>数组，字符串之类的，先想一想能不能用dp。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 所有的dp问题都是找状态转移。</span><br><span class="line"> * 就像数学归纳法一样，第一个满足，后面的按照顺序都满足。</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">public class Knapsack &#123;</span><br><span class="line">    /**</span><br><span class="line">     * 最蠢的方法，dp[i][j]；</span><br><span class="line">     * i为0-i，遍历到第i个物品。</span><br><span class="line">     * j为剩余的空间。0-C。</span><br><span class="line">     * 事件复杂度为C*n</span><br><span class="line">     * 当物品的重量或者体积分布不均，或者很大的时候，有很多列J，都是相同的。</span><br><span class="line">     * @param vol</span><br><span class="line">     * @param val</span><br><span class="line">     * @param v</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public int back(int[] vol,int[] val,int v)&#123;</span><br><span class="line">        int i=val.length;</span><br><span class="line">        int[][] dp=new int[i+1][v+1];</span><br><span class="line"></span><br><span class="line">        int cur=v;</span><br><span class="line">        for(int j=1;j&lt;=i;j++)&#123;</span><br><span class="line">            for(int k=1;k&lt;=v;k++)&#123;</span><br><span class="line">                if(k&lt;vol[j-1])&#123;</span><br><span class="line">                    dp[j][k]=dp[j-1][k];</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    dp[j][k]=Math.max(dp[j-1][k],dp[j-1][k-vol[j-1]]+val[j-1]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[i][v];</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 观察递推形式dp[j][k]=Math.max(dp[j-1][k],dp[j-1][k-vol[j-1]]+val[j-1]);</span><br><span class="line">     * 对于当前行，只跟前面J-1行相关。</span><br><span class="line">     * 可以优化为两行，因为J只跟,j-1有关。</span><br><span class="line">     *</span><br><span class="line">     */</span><br><span class="line">    public int optBack(int[] vol,int[] val,int C)&#123;</span><br><span class="line">        int[][] dp=new int[2][C+1];</span><br><span class="line">        for(int i=0;i&lt;vol.length;i++)&#123;</span><br><span class="line">            for(int j=1;j&lt;=C;j++)&#123;</span><br><span class="line">                if(j&lt;vol[i])&#123;</span><br><span class="line">                    dp[i&amp;1][j]=dp[(i+1)&amp;1][j];</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    dp[i&amp;1][j]=Math.max(dp[(i+1)&amp;1][j],dp[(i+1)&amp;1][j-vol[i]]+val[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return Math.max(dp[1][C],dp[0][C]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 只用一行来进行计算。dp[]中变量是j，容量。</span><br><span class="line">     * 从优化后的两行来看dp[i&amp;1][j]=Math.max(dp[(i+1)&amp;1][j],dp[(i+1)&amp;1][j-vol[i]]+val[i]);</span><br><span class="line">     * j只可能更前面的j-vol[i]列相关，如果只用列来表示，后面的列只跟前面的行，列有关。</span><br><span class="line">     * 因此如果用一行数据，倒序的话，j之前的数据都是前面一行留下来的数据。正好符合题意。</span><br><span class="line">     *</span><br><span class="line">     *</span><br><span class="line">     * @param</span><br><span class="line">     */</span><br><span class="line">    public int oneDp(int[] vol,int[] val,int C)&#123;</span><br><span class="line">        int[] dp=new int[C+1];</span><br><span class="line">        for(int i=0;i&lt;vol.length;i++)&#123;</span><br><span class="line">            for(int j=C;j&gt;0;j++)&#123;</span><br><span class="line">                if(j&gt;=vol[i])&#123;</span><br><span class="line">                    dp[j]=Math.max(dp[j],dp[j-vol[i]]+val[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[C];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/拦截器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1658,151 +1800,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="YAHIKO">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="寒い">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/27/algorithm/" itemprop="url">
-                  algorithm
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-11-27 09:57:41 / Modified: 19:26:56" itemprop="dateCreated datePublished" datetime="2018-11-27T09:57:41+08:00">2018-11-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="backtracking"><a href="#backtracking" class="headerlink" title="backtracking"></a>backtracking</h3><hr>
-<h4 id="1-Permutation"><a href="#1-Permutation" class="headerlink" title="1. Permutation"></a>1. Permutation</h4><p>在当前的进度上，接下来有很多的元素，并且是等价的，需要，接受一个，然后替换另一种可能性，过程中失败回到上一个状态。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/27/algorithm/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1854,7 +1851,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1885,7 +1882,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -2111,9 +2110,9 @@
       
     
       
-        
-      
     
+      
+        
       
     
       
