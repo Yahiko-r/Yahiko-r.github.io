@@ -111,22 +111,25 @@
   <meta name="description" content="DispatcherServlet:是一个servlet，也就是会被放到tomcat容器中，只不过功能是用来分发。 所有请求，视图解析，映射处理之类的都是通过DispatcherServlet来交给其他组件，最后返回响应给用户。  步骤：  12345678910111213 1、  首先用户发送请求——&amp;gt;DispatcherServlet，前端控制器收到请求后自己不进行处理，而是委托给其他">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring1-拦截器">
-<meta property="og:url" content="http://yoursite.com/2019/04/04/拦截器/index.html">
+<meta property="og:title" content="springMVC">
+<meta property="og:url" content="http://yoursite.com/2019/04/08/springMVC/index.html">
 <meta property="og:site_name" content="寒い">
 <meta property="og:description" content="DispatcherServlet:是一个servlet，也就是会被放到tomcat容器中，只不过功能是用来分发。 所有请求，视图解析，映射处理之类的都是通过DispatcherServlet来交给其他组件，最后返回响应给用户。  步骤：  12345678910111213 1、  首先用户发送请求——&amp;gt;DispatcherServlet，前端控制器收到请求后自己不进行处理，而是委托给其他">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-04T11:21:43.530Z">
+<meta property="og:image" content="c:/Users/YAHIKO/AppData/Roaming/Typora/typora-user-images/1554688443636.png">
+<meta property="og:image" content="c:/Users/YAHIKO/AppData/Roaming/Typora/typora-user-images/1554689261900.png">
+<meta property="og:updated_time" content="2019-04-08T07:25:44.415Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring1-拦截器">
+<meta name="twitter:title" content="springMVC">
 <meta name="twitter:description" content="DispatcherServlet:是一个servlet，也就是会被放到tomcat容器中，只不过功能是用来分发。 所有请求，视图解析，映射处理之类的都是通过DispatcherServlet来交给其他组件，最后返回响应给用户。  步骤：  12345678910111213 1、  首先用户发送请求——&amp;gt;DispatcherServlet，前端控制器收到请求后自己不进行处理，而是委托给其他">
+<meta name="twitter:image" content="c:/Users/YAHIKO/AppData/Roaming/Typora/typora-user-images/1554688443636.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/04/拦截器/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/04/08/springMVC/"/>
 
 
 
@@ -136,7 +139,7 @@
   };
 </script>
 
-  <title>Spring1-拦截器 | 寒い</title>
+  <title>springMVC | 寒い</title>
   
 
 
@@ -281,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/04/拦截器/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/springMVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YAHIKO">
@@ -298,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring1-拦截器
+          <h1 class="post-title" itemprop="name headline">springMVC
               
             
           </h1>
@@ -323,7 +326,7 @@
                 
               
 
-              <time title="Created: 2019-04-04 15:07:23 / Modified: 19:21:43" itemprop="dateCreated datePublished" datetime="2019-04-04T15:07:23+08:00">2019-04-04</time>
+              <time title="Created: 2019-04-08 15:24:27 / Modified: 15:25:44" itemprop="dateCreated datePublished" datetime="2019-04-08T15:24:27+08:00">2019-04-08</time>
             
 
             
@@ -367,7 +370,18 @@
 <p>步骤：</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> 1、  首先用户发送请求——&gt;DispatcherServlet，前端控制器收到请求后自己不进行处理，而是委托给其他的解析器进行处理，作为统一访问点，进行全局的流程控制；</span><br><span class="line"></span><br><span class="line">2、  DispatcherServlet——&gt;HandlerMapping，HandlerMapping 将会把请求映射为 HandlerExecutionChain 对象（包含一个 Handler 处理器（页面控制器）对象、多个 HandlerInterceptor 拦截器，handler处理器是通过AbstractUrlHandlerMapping类中的方法来获取的，HandlerInterceptor是通过AbstractHandlerMapping类来获取的）对象，通过这种策略模式，很容易添加新的映射策略；</span><br><span class="line"></span><br><span class="line">3、  DispatcherServlet——&gt;HandlerAdapter，HandlerAdapter 将会把处理器包装为适配器，从而支持多种类型的处理器，即适配器设计模式的应用，从而很容易支持很多类型的处理器；</span><br><span class="line"></span><br><span class="line">4、  HandlerAdapter——&gt;处理器功能处理方法的调用，HandlerAdapter 将会根据适配的结果调用真正的处理器的功能处理方法，完成功能处理；并返回一个 ModelAndView 对象（包含模型数据、逻辑视图名）；</span><br><span class="line"></span><br><span class="line">5、  ModelAndView 的逻辑视图名——&gt; ViewResolver， ViewResolver 将把逻辑视图名解析为具体的 View，通过这种策略模式，很容易更换其他视图技术；</span><br><span class="line"></span><br><span class="line">6、  View——&gt;渲染，View 会根据传进来的 Model 模型数据进行渲染，此处的 Model 实际是一个 Map 数据结构，因此很容易支持其他视图技术；</span><br><span class="line"></span><br><span class="line">7、  返回控制权给 DispatcherServlet，由 DispatcherServlet 返回响应给用户，到此一个流程结束。</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\YAHIKO\AppData\Roaming\Typora\typora-user-images\1554688443636.png" alt="1554688443636"></p>
+<ol>
+<li>设置属性</li>
+<li>根据 Request 请求的 URL 得到对应的 handler 执行链，其实就是拦截器和 Controller 代理对象。</li>
+<li>得到 handler 的适配器</li>
+<li>循环执行 handler 的 pre 拦截器</li>
+<li>执行真正的 handler，并返回 ModelAndView(Handler 是个代理对象，可能会执行 AOP )</li>
+<li>根据 ModelAndView 信息得到 View 实例</li>
+<li>渲染 View 返回</li>
+</ol>
 <hr>
+<p><img src="C:\Users\YAHIKO\AppData\Roaming\Typora\typora-user-images\1554689261900.png" alt="1554689261900"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据url调用不同的handler来处理。</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doDispatch</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		HttpServletRequest processedRequest = request;</span><br><span class="line">		HandlerExecutionChain mappedHandler = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">boolean</span> multipartRequestParsed = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">		WebAsyncManager asyncManager = WebAsyncUtils.getAsyncManager(request);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			ModelAndView mv = <span class="keyword">null</span>;</span><br><span class="line">			Exception dispatchException = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				processedRequest = checkMultipart(request);</span><br><span class="line">				multipartRequestParsed = (processedRequest != request);</span><br><span class="line"></span><br><span class="line">				<span class="comment">// Determine handler for the current request.</span></span><br><span class="line">                <span class="comment">//根据request找对应的HandlerExecutionChain</span></span><br><span class="line">				mappedHandler = getHandler(processedRequest);</span><br><span class="line">				<span class="keyword">if</span> (mappedHandler == <span class="keyword">null</span>) &#123;</span><br><span class="line">					noHandlerFound(processedRequest, response);</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="comment">// Determine handler adapter for the current request.</span></span><br><span class="line">                <span class="comment">//mappedHandler是Chain，里面有handler和interceptor,从handler中得到handlerAdapter.</span></span><br><span class="line">				HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());</span><br><span class="line"></span><br><span class="line">				<span class="comment">// Process last-modified header, if supported by the handler.</span></span><br><span class="line">				String method = request.getMethod();</span><br><span class="line">				<span class="keyword">boolean</span> isGet = <span class="string">"GET"</span>.equals(method);</span><br><span class="line">				<span class="keyword">if</span> (isGet || <span class="string">"HEAD"</span>.equals(method)) &#123;</span><br><span class="line">					<span class="keyword">long</span> lastModified = ha.getLastModified(request, mappedHandler.getHandler());</span><br><span class="line">					<span class="keyword">if</span> (<span class="keyword">new</span> ServletWebRequest(request, response).checkNotModified(lastModified) &amp;&amp; isGet) &#123;</span><br><span class="line">						<span class="keyword">return</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//chain中的所有前处理进行处理。</span></span><br><span class="line">				<span class="keyword">if</span> (!mappedHandler.applyPreHandle(processedRequest, response)) &#123;</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="comment">// Actually invoke the handler.</span></span><br><span class="line">                <span class="comment">//用HandlerAdapter处理请求，得到的是ModelAndView</span></span><br><span class="line">				mv = ha.handle(processedRequest, response, mappedHandler.getHandler());</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> (asyncManager.isConcurrentHandlingStarted()) &#123;</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				applyDefaultViewName(processedRequest, mv);</span><br><span class="line">                <span class="comment">//调用postHandler进行处理。</span></span><br><span class="line">				mappedHandler.applyPostHandle(processedRequest, response, mv);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">				dispatchException = ex;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span> (Throwable err) &#123;</span><br><span class="line">				<span class="comment">// As of 4.3, we're processing Errors thrown from handler methods as well,</span></span><br><span class="line">				<span class="comment">// making them available for @ExceptionHandler methods and other scenarios.</span></span><br><span class="line">				dispatchException = <span class="keyword">new</span> NestedServletException(<span class="string">"Handler dispatch failed"</span>, err);</span><br><span class="line">			&#125;</span><br><span class="line">			processDispatchResult(processedRequest, response, mappedHandler, mv, dispatchException);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (Exception ex) &#123;</span><br><span class="line">            <span class="comment">//有异常依然会执行afterCOmpletion</span></span><br><span class="line">			triggerAfterCompletion(processedRequest, response, mappedHandler, ex);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (Throwable err) &#123;</span><br><span class="line">            <span class="comment">//Interceptor中的afterCompletion方法</span></span><br><span class="line">			triggerAfterCompletion(processedRequest, response, mappedHandler,</span><br><span class="line">					<span class="keyword">new</span> NestedServletException(<span class="string">"Handler processing failed"</span>, err));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">finally</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (asyncManager.isConcurrentHandlingStarted()) &#123;</span><br><span class="line">				<span class="comment">// Instead of postHandle and afterCompletion</span></span><br><span class="line">				<span class="keyword">if</span> (mappedHandler != <span class="keyword">null</span>) &#123;</span><br><span class="line">					mappedHandler.applyAfterConcurrentHandlingStarted(processedRequest, response);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// Clean up any resources used by a multipart request.</span></span><br><span class="line">				<span class="keyword">if</span> (multipartRequestParsed) &#123;</span><br><span class="line">					cleanupMultipart(processedRequest);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="AbstractHandlerMapping"><a href="#AbstractHandlerMapping" class="headerlink" title="AbstractHandlerMapping"></a>AbstractHandlerMapping</h4><p>获得HandlerExecutionChain，以及拦截器的list。</p>
 <p>1个url-&gt;多个拦截器。1个url-&gt;1个handler.</p>
@@ -437,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/25/DP/" rel="next" title="DP">
-                <i class="fa fa-chevron-left"></i> DP
+              <a href="/2019/04/05/dp-2/" rel="next" title="dp--2">
+                <i class="fa fa-chevron-left"></i> dp--2
               </a>
             
           </div>
@@ -446,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/05/dp-2/" rel="prev" title="dp--2">
-                dp--2 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
