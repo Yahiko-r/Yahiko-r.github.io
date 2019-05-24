@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="今天头条二面，两道算法题，一是：交换数字位置变为最大，NO670，要求O(n)，之前在leetCode做题很少想过找出最优的解法，今天遇到了，怎么也想不出来，一开始用的$O(n^2)$，提示说O(n)，想着怎么一次遍历过来，其实有时候思维定势，看到$O(n)$就想着一次遍历，其实只要不是n次遍历，都行，第二题是个简单的二分，但是其中一个条件，mid多加了1，有bug，应该是没了，最好的一次机会白白">
-<meta name="keywords" content="rethink">
+  <meta name="description" content="组件从Echo开始，《netty》实战上的例子。 123456789101112131415161718EventLoopGroup group=new NioEventLoopGroup();try&amp;#123;    Bootstrap b=new Bootstrap();    b.group(group)            .channel(NioSocketChannel.class)">
+<meta name="keywords" content="Netty">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面试后">
-<meta property="og:url" content="http://yoursite.com/2018/12/12/面试后/index.html">
+<meta property="og:title" content="netty-1">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/netty-1/index.html">
 <meta property="og:site_name" content="寒い">
-<meta property="og:description" content="今天头条二面，两道算法题，一是：交换数字位置变为最大，NO670，要求O(n)，之前在leetCode做题很少想过找出最优的解法，今天遇到了，怎么也想不出来，一开始用的$O(n^2)$，提示说O(n)，想着怎么一次遍历过来，其实有时候思维定势，看到$O(n)$就想着一次遍历，其实只要不是n次遍历，都行，第二题是个简单的二分，但是其中一个条件，mid多加了1，有bug，应该是没了，最好的一次机会白白">
+<meta property="og:description" content="组件从Echo开始，《netty》实战上的例子。 123456789101112131415161718EventLoopGroup group=new NioEventLoopGroup();try&amp;#123;    Bootstrap b=new Bootstrap();    b.group(group)            .channel(NioSocketChannel.class)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-12T12:08:51.310Z">
+<meta property="og:updated_time" content="2019-05-24T14:35:46.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面试后">
-<meta name="twitter:description" content="今天头条二面，两道算法题，一是：交换数字位置变为最大，NO670，要求O(n)，之前在leetCode做题很少想过找出最优的解法，今天遇到了，怎么也想不出来，一开始用的$O(n^2)$，提示说O(n)，想着怎么一次遍历过来，其实有时候思维定势，看到$O(n)$就想着一次遍历，其实只要不是n次遍历，都行，第二题是个简单的二分，但是其中一个条件，mid多加了1，有bug，应该是没了，最好的一次机会白白">
+<meta name="twitter:title" content="netty-1">
+<meta name="twitter:description" content="组件从Echo开始，《netty》实战上的例子。 123456789101112131415161718EventLoopGroup group=new NioEventLoopGroup();try&amp;#123;    Bootstrap b=new Bootstrap();    b.group(group)            .channel(NioSocketChannel.class)">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/12/面试后/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/netty-1/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>面试后 | 寒い</title>
+  <title>netty-1 | 寒い</title>
   
 
 
@@ -281,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/12/面试后/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/netty-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YAHIKO">
@@ -298,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面试后
+          <h1 class="post-title" itemprop="name headline">netty-1
               
             
           </h1>
@@ -323,7 +323,7 @@
                 
               
 
-              <time title="Created: 2018-12-12 19:22:42 / Modified: 20:08:51" itemprop="dateCreated datePublished" datetime="2018-12-12T19:22:42+08:00">2018-12-12</time>
+              <time title="Created: 2019-05-24 22:28:36 / Modified: 22:35:46" itemprop="dateCreated datePublished" datetime="2019-05-24T22:28:36+08:00">2019-05-24</time>
             
 
             
@@ -361,15 +361,22 @@
       
 
       
-        <p>今天头条二面，两道算法题，一是：交换数字位置变为最大，NO670，要求O(n)，之前在leetCode做题很少想过找出最优的解法，今天遇到了，怎么也想不出来，一开始用的$O(n^2)$，提示说O(n)，想着怎么一次遍历过来，其实有时候思维定势，看到$O(n)$就想着一次遍历，其实只要不是n次遍历，都行，第二题是个简单的二分，但是其中一个条件，mid多加了1，有bug，应该是没了，最好的一次机会白白丢失了。明明很简单的题，就像考试一样，做题时候脑子里一片空白，老是犯错误，从大三到现在还是没有找到方法去改变。</p>
-<ul>
-<li><p>有时候，在想边界问题的时候一定要清晰是怎么回事。整体有了思路之后，再开始写代码，不然会来回修改代码，很容易造成有变量遗漏，从而出现问题。</p>
-</li>
-<li><p>做完题之后，进行思考是很有帮助的，不然每次做题的收获很少，没过两天就忘记了。</p>
-</li>
-<li>一定要定时复习，不然看过的东西跟没看一样，就像之前的英语和日语单词一样，很眼熟但是就是想不起来。</li>
-</ul>
-<p>现在时间已经不够了，多多利用吧。面试之后找到不足，也找到了努力的方向，春招加油吧。</p>
+        <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><p>从Echo开始，《netty》实战上的例子。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">EventLoopGroup group=<span class="keyword">new</span> NioEventLoopGroup();</span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    Bootstrap b=<span class="keyword">new</span> Bootstrap();</span><br><span class="line">    b.group(group)</span><br><span class="line">            .channel(NioSocketChannel.class)</span><br><span class="line">            .remoteAddress(<span class="keyword">new</span> InetSocketAddress(host,port))</span><br><span class="line">            .handler(<span class="keyword">new</span> ChannelInitializer&lt;SocketChannel&gt;() &#123;</span><br><span class="line"></span><br><span class="line">                <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initChannel</span><span class="params">(SocketChannel ch)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">                    </span><br><span class="line">                    ch.pipeline().addLast(<span class="keyword">new</span> EchoClientHandler());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">    ChannelFuture f=b.connect().sync();</span><br><span class="line">    f.channel().closeFuture().sync();</span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">    group.shutdownGracefully();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>Bootstrap 是引导类，ServerBootstrap有两个EventLoopGroup，一个为传入连接请求创建Channel，一个</p>
+<p>NioEventLoopGroup相当于线程池，包含多个EventLoop,  EventLoop只和一个Thread绑定。channel注册到一个EventLoop。</p>
+<p>对接收到的数据进行处理是在pipeline中，pipeline包含出站（ChannelOutboundHandler）和入站(ChannelInboundhandler)，入站顺序按照pipeline添加handler的顺序，出站相反。因此要对数据进行处理（编码，解码等）都是写ChannelHandler添加到pipeline中。</p>
+<p>Netty中有大量的ChannelHandler默认实现，只需要重写特殊处理的方法。</p>
+<p>编码和解码有一些基类：ByteToMessageDecoder,MessageToByteEncoder，作用和名字一样。</p>
+<p>NioSocketChannel，是异步的客户端TCP 连接，NioServerSocketChannel表示的是服务端。根据不同的协议类型还有NioDatagramChannel，表示UDP连接，NioSctpChannel，Sctp连接。</p>
+<p>NioSocketChannel通过工厂方法来新建实例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> B <span class="title">channel</span><span class="params">(Class&lt;? extends C&gt; channelClass)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (channelClass == <span class="keyword">null</span>) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> NullPointerException(<span class="string">"channelClass"</span>);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">this</span>.channelFactory(<span class="keyword">new</span> AbstractBootstrap.BootstrapChannelFactory(channelClass));</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>BootstrapChannelFactory工厂中的 newChannel() 方法:<code>return (Channel)this.clazz.newInstance();</code></p>
+<p>Channel的实例化实在 b.connect()的时候进行的。返回值都是 ChannelFuture, 这几个方法都是在BootStrap或者父类AbstractBootStrap（ServerBootStrap和bootStrap的共有方法）中，</p>
+<p><code>connect() -&gt; doResolveAndConnect() -&gt; initAndRegister()</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> ChannelFuture <span class="title">initAndRegister</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       Channel channel = <span class="keyword">null</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           channel = <span class="keyword">this</span>.channelFactory.newChannel();</span><br><span class="line">           <span class="keyword">this</span>.init(channel);</span><br><span class="line">       &#125; <span class="keyword">catch</span> (Throwable var3) &#123;</span><br><span class="line">            ……</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>在 NioSocketChannel构造中，最终生成到Java中socketChannel，在AbstractNioChannel中设置<code>channel.configureBlocking(false)</code> ，<code>readInterestOp=SelectionKey.OP_READ</code>，这里的readInterestOp是用int来表示的。</p>
 
       
     </div>
@@ -390,7 +397,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/rethink/" rel="tag"># rethink</a>
+            <a href="/tags/Netty/" rel="tag"># Netty</a>
           
         </div>
       
@@ -403,8 +410,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/09/数据结构/" rel="next" title="数据结构">
-                <i class="fa fa-chevron-left"></i> 数据结构
+              <a href="/2019/04/08/springMVC/" rel="next" title="springMVC">
+                <i class="fa fa-chevron-left"></i> springMVC
               </a>
             
           </div>
@@ -412,10 +419,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/14/数据结构与算法II/" rel="prev" title="数据结构与算法II">
-                数据结构与算法II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -460,8 +463,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -548,6 +560,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件"><span class="nav-number">1.</span> <span class="nav-text">组件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
