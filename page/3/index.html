@@ -108,24 +108,20 @@
 
 
 
-  <meta name="description" content="图用邻接表来表示 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556public class Graph&amp;#123;	private final int V;	private int E;	private Bag&amp;lt;Integer&amp;gt;[">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据结构与算法II">
-<meta property="og:url" content="http://yoursite.com/2018/12/14/数据结构与算法II/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="寒い">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="寒い">
-<meta property="og:description" content="图用邻接表来表示 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556public class Graph&amp;#123;	private final int V;	private int E;	private Bag&amp;lt;Integer&amp;gt;[">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-12-15T15:14:24.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构与算法II">
-<meta name="twitter:description" content="图用邻接表来表示 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556public class Graph&amp;#123;	private final int V;	private int E;	private Bag&amp;lt;Integer&amp;gt;[">
+<meta name="twitter:title" content="寒い">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/14/数据结构与算法II/"/>
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
 
 
 
@@ -135,7 +131,7 @@
   };
 </script>
 
-  <title>数据结构与算法II | 寒い</title>
+  <title>寒い</title>
   
 
 
@@ -182,7 +178,8 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,9 +260,9 @@
           
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -280,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/数据结构与算法II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/22/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="YAHIKO">
@@ -297,7 +294,11 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构与算法II
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/22/hello-world/" itemprop="url">
+                  Hello World
+                </a>
               
             
           </h1>
@@ -322,25 +323,9 @@
                 
               
 
-              <time title="Created: 2018-12-14 23:00:43" itemprop="dateCreated datePublished" datetime="2018-12-14T23:00:43+08:00">2018-12-14</time>
+              <time title="Created: 2018-05-22 23:41:41" itemprop="dateCreated datePublished" datetime="2018-05-22T23:41:41+08:00">2018-05-22</time>
             
 
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-12-15 23:14:24" itemprop="dateModified" datetime="2018-12-15T23:14:24+08:00">2018-12-15</time>
-              
             
           </span>
 
@@ -372,9 +357,20 @@
       
 
       
-        <h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>用邻接表来表示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">public class Graph&#123;</span><br><span class="line">	private final int V;</span><br><span class="line">	private int E;</span><br><span class="line">	private Bag&lt;Integer&gt;[] adj;</span><br><span class="line">	public Graph(int V)&#123;</span><br><span class="line">		this.V=V;thisE=0;</span><br><span class="line">		adj=(Bag&lt;Integer&gt;[])new Bag[V];</span><br><span class="line">		for(int v=0;v&lt;V;v++)</span><br><span class="line">			adj[v]=new Bag&lt;Integer&gt;();</span><br><span class="line">	&#125;</span><br><span class="line">	public int V()&#123;return V;&#125;</span><br><span class="line">	public int E()&#123;return E;&#125;</span><br><span class="line">	</span><br><span class="line">	public void addEdge(int v,int w)&#123;</span><br><span class="line">        adj[v].add(w);</span><br><span class="line">        adj[w].add(v);</span><br><span class="line">        E++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	int v();</span><br><span class="line">	int E();</span><br><span class="line">    public String toString();</span><br><span class="line">    public Graph(int v);</span><br><span class="line">    </span><br><span class="line">    public static int degree(Graph G,int v)&#123;</span><br><span class="line">        int degree=0;</span><br><span class="line">        for(int W:G.adj(v))degree++;</span><br><span class="line">        return degree;</span><br><span class="line">    &#125;</span><br><span class="line">    public static int maxDegree(Graph G)&#123;</span><br><span class="line">        int max=0;</span><br><span class="line">        for(int v=0;v&lt;G.V();v++)</span><br><span class="line">            if(degree(G,v)&gt;max)</span><br><span class="line">            	max=degree(G,v);</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">    public static int numberOfSelfLoops(Graph G)&#123;</span><br><span class="line">        int count=0;</span><br><span class="line">        for(int v=0;v&lt;G.V();v++)</span><br><span class="line">        	for(int w:G.adj(v))</span><br><span class="line">        		if(v==w)count++;</span><br><span class="line">        return count/2;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        String </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
+          
+        
       
     </div>
 
@@ -394,32 +390,12 @@
       
 
       
-      
+
       
 
       
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/12/12/面试后/" rel="next" title="面试后">
-                <i class="fa fa-chevron-left"></i> 面试后
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/08/二分查找/" rel="prev" title="二分查找">
-                二分查找 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
       
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -429,15 +405,18 @@
   </article>
 
 
-  </div>
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
 
 
           </div>
           
-
-  
-
-
 
         </div>
         
@@ -458,17 +437,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -557,22 +527,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图"><span class="nav-number">1.</span> <span class="nav-text">图</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -710,10 +664,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
-
-
 
   
 
@@ -753,6 +703,10 @@
   
 
   
+  
+    
+      
+    
   
 
   
