@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="title: LeetCode 955date: 2019-09-08 18:28:43tags: LeetCode Delete COlumns to Make Sorted II贪心。 12345678910111213141516We are given an array A of N lowercase letter strings, all of the same length.Now,">
+  <meta name="description" content="Delete COlumns to Make Sorted II贪心。 12345678910111213141516We are given an array A of N lowercase letter strings, all of the same length.Now, we may choose any set of deletion indices, and for each st">
+<meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="寒い">
+<meta property="og:title" content="LeetCode 955">
 <meta property="og:url" content="http://yoursite.com/2019/09/08/LeetCode-955/index.html">
 <meta property="og:site_name" content="寒い">
-<meta property="og:description" content="title: LeetCode 955date: 2019-09-08 18:28:43tags: LeetCode Delete COlumns to Make Sorted II贪心。 12345678910111213141516We are given an array A of N lowercase letter strings, all of the same length.Now,">
+<meta property="og:description" content="Delete COlumns to Make Sorted II贪心。 12345678910111213141516We are given an array A of N lowercase letter strings, all of the same length.Now, we may choose any set of deletion indices, and for each st">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-08T10:41:16.961Z">
+<meta property="og:updated_time" content="2019-09-08T14:51:14.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寒い">
-<meta name="twitter:description" content="title: LeetCode 955date: 2019-09-08 18:28:43tags: LeetCode Delete COlumns to Make Sorted II贪心。 12345678910111213141516We are given an array A of N lowercase letter strings, all of the same length.Now,">
+<meta name="twitter:title" content="LeetCode 955">
+<meta name="twitter:description" content="Delete COlumns to Make Sorted II贪心。 12345678910111213141516We are given an array A of N lowercase letter strings, all of the same length.Now, we may choose any set of deletion indices, and for each st">
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title> | 寒い</title>
+  <title>LeetCode 955 | 寒い</title>
   
 
 
@@ -297,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">LeetCode 955
               
             
           </h1>
@@ -322,7 +323,7 @@
                 
               
 
-              <time title="Created: 2019-09-08 18:28:43 / Modified: 18:41:16" itemprop="dateCreated datePublished" datetime="2019-09-08T18:28:43+08:00">2019-09-08</time>
+              <time title="Created: 2019-09-08 18:28:43 / Modified: 22:51:14" itemprop="dateCreated datePublished" datetime="2019-09-08T18:28:43+08:00">2019-09-08</time>
             
 
             
@@ -360,8 +361,7 @@
       
 
       
-        <p>title: LeetCode 955<br>date: 2019-09-08 18:28:43<br>tags: LeetCode</p>
-<h3 id="Delete-COlumns-to-Make-Sorted-II"><a href="#Delete-COlumns-to-Make-Sorted-II" class="headerlink" title="Delete COlumns to Make Sorted II"></a>Delete COlumns to Make Sorted II</h3><p>贪心。</p>
+        <h3 id="Delete-COlumns-to-Make-Sorted-II"><a href="#Delete-COlumns-to-Make-Sorted-II" class="headerlink" title="Delete COlumns to Make Sorted II"></a>Delete COlumns to Make Sorted II</h3><p>贪心。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">We are given an array A of N lowercase letter strings, all of the same length.</span><br><span class="line"></span><br><span class="line">Now, we may choose any set of deletion indices, and for each string, we delete all the characters in those indices.</span><br><span class="line"></span><br><span class="line">For example, if we have an array A = [&quot;abcdef&quot;,&quot;uvwxyz&quot;] and deletion indices &#123;0, 2, 3&#125;, then the final array after deletions is [&quot;bef&quot;,&quot;vyz&quot;].</span><br><span class="line"></span><br><span class="line">Suppose we chose a set of deletion indices D such that after deletions, the final array has its elements in lexicographic order (A[0] &lt;= A[1] &lt;= A[2] ... &lt;= A[A.length - 1]).</span><br><span class="line"></span><br><span class="line">Return the minimum possible value of D.length.</span><br><span class="line"></span><br><span class="line">Input: [&quot;ca&quot;,&quot;bb&quot;,&quot;ac&quot;]</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: </span><br><span class="line">After deleting the first column, A = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].</span><br><span class="line">Now A is in lexicographic order (ie. A[0] &lt;= A[1] &lt;= A[2]).</span><br><span class="line">We require at least 1 deletion since initially A was not in lexicographic order, so the answer is 1.</span><br></pre></td></tr></table></figure>
 <p>直接从第一行开始，一行一行的向后检查就行，如果每行都是<code>A[i][j]&lt;A[i+1][j]</code> ，那么后面的几列，第i i+1行肯定是满足要求的，不用判断。特殊的情况在于：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a  b  z</span><br><span class="line">a  c  y</span><br><span class="line">b  x  a</span><br><span class="line">b  x  b</span><br><span class="line">z  a  a</span><br></pre></td></tr></table></figure>
@@ -385,6 +385,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          
+        </div>
+      
 
       
       
@@ -403,6 +409,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/09/1054-Distant-Barcodes/" rel="prev" title="1054 Distant Barcodes">
+                1054 Distant Barcodes <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -476,7 +486,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -511,7 +521,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
