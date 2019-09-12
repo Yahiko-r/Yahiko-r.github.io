@@ -108,14 +108,18 @@
 
 
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="Distant Barcodes123456In a warehouse, there is a row of barcodes, where the i-th barcode is barcodes[i].Rearrange the barcodes so that no two adjacent barcodes are equal.  You may return any answer, a">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
 <meta property="og:title" content="1054 Distant Barcodes">
 <meta property="og:url" content="http://yoursite.com/2019/09/09/1054-Distant-Barcodes/index.html">
 <meta property="og:site_name" content="寒い">
+<meta property="og:description" content="Distant Barcodes123456In a warehouse, there is a row of barcodes, where the i-th barcode is barcodes[i].Rearrange the barcodes so that no two adjacent barcodes are equal.  You may return any answer, a">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-09T02:43:28.569Z">
+<meta property="og:updated_time" content="2019-09-09T03:17:56.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1054 Distant Barcodes">
+<meta name="twitter:description" content="Distant Barcodes123456In a warehouse, there is a row of barcodes, where the i-th barcode is barcodes[i].Rearrange the barcodes so that no two adjacent barcodes are equal.  You may return any answer, a">
 
 
 
@@ -319,9 +323,13 @@
                 
               
 
-              <time title="Created: 2019-09-09 10:43:28" itemprop="dateCreated datePublished" datetime="2019-09-09T10:43:28+08:00">2019-09-09</time>
+              <time title="Created: 2019-09-09 10:43:28 / Modified: 11:17:56" itemprop="dateCreated datePublished" datetime="2019-09-09T10:43:28+08:00">2019-09-09</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -353,7 +361,11 @@
       
 
       
-        
+        <h3 id="Distant-Barcodes"><a href="#Distant-Barcodes" class="headerlink" title="Distant Barcodes"></a>Distant Barcodes</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">In a warehouse, there is a row of barcodes, where the i-th barcode is barcodes[i].</span><br><span class="line"></span><br><span class="line">Rearrange the barcodes so that no two adjacent barcodes are equal.  You may return any answer, and it is guaranteed an answer exists.</span><br><span class="line">Example:</span><br><span class="line">Input: [1,1,1,2,2,2]</span><br><span class="line">Output: [2,1,2,1,2,1]</span><br></pre></td></tr></table></figure>
+<p>让数组中相邻的数字不相同，题目保证了一定存在。让数组中出现次数最多的那个数字跟出现次数第二多的数字交叉排列（这里可以直接放到奇数位，然后放到偶数位，就可以一次只取出一种数字）。排完之后排紧接着排下一个频率最多的。</p>
+<p>讨论区里：只需要先排列频率最多的就行了，其他的数字顺序可以随意。</p>
+<p>重点：直接放到偶数位上，满了之后再放到奇数位，不要挨着一个交替一个放，这样就不用考虑重复的问题。</p>
+
       
     </div>
 
@@ -370,6 +382,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          
+        </div>
       
 
       
@@ -389,6 +407,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/09/1080-Insufficient-Nodes-in-Root-to-Leaf-Paths/" rel="prev" title="1080 Insufficient Nodes in Root to Leaf Paths">
+                1080 Insufficient Nodes in Root to Leaf Paths <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -433,8 +455,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -453,7 +484,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -490,7 +521,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -523,6 +560,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Distant-Barcodes"><span class="nav-number">1.</span> <span class="nav-text">Distant Barcodes</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
