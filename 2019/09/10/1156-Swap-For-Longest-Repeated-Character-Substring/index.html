@@ -108,20 +108,25 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="寒い">
-<meta property="og:url" content="http://yoursite.com/tags/backtracking/index.html">
+  <meta name="description" content="1156. Swap For Longest Repeated Character Substring12345Given a string text, we are allowed to swap two of the characters in the string. Find the length of the longest substring with repeated characte">
+<meta name="keywords" content="String">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1156 Swap For Longest Repeated Character Substring">
+<meta property="og:url" content="http://yoursite.com/2019/09/10/1156-Swap-For-Longest-Repeated-Character-Substring/index.html">
 <meta property="og:site_name" content="寒い">
+<meta property="og:description" content="1156. Swap For Longest Repeated Character Substring12345Given a string text, we are allowed to swap two of the characters in the string. Find the length of the longest substring with repeated characte">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-10T04:24:10.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="寒い">
+<meta name="twitter:title" content="1156 Swap For Longest Repeated Character Substring">
+<meta name="twitter:description" content="1156. Swap For Longest Repeated Character Substring12345Given a string text, we are allowed to swap two of the characters in the string. Find the length of the longest substring with repeated characte">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/backtracking/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/09/10/1156-Swap-For-Longest-Repeated-Character-Substring/"/>
 
 
 
@@ -131,7 +136,7 @@
   };
 </script>
 
-  <title>Tag: backtracking | 寒い</title>
+  <title>1156 Swap For Longest Repeated Character Substring | 寒い</title>
   
 
 
@@ -178,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -256,75 +261,185 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>backtracking<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/10/1156-Swap-For-Longest-Repeated-Character-Substring/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="YAHIKO">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="寒い">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/27/algorithm/" itemprop="url">
-              
-                <span itemprop="name">algorithm</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">1156 Swap For Longest Repeated Character Substring
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-27T09:57:41+08:00"
-              content="2018-11-27" >
-          11-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-10 10:06:32 / Modified: 12:24:10" itemprop="dateCreated datePublished" datetime="2019-09-10T10:06:32+08:00">2019-09-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1156-Swap-For-Longest-Repeated-Character-Substring"><a href="#1156-Swap-For-Longest-Repeated-Character-Substring" class="headerlink" title="1156. Swap For Longest Repeated Character Substring"></a>1156. Swap For Longest Repeated Character Substring</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Given a string text, we are allowed to swap two of the characters in the string. Find the length of the longest substring with repeated characters.</span><br><span class="line">Input: text = &quot;aaabaaa&quot;</span><br><span class="line">Output: 6</span><br><span class="line">Input: text = &quot;aaabbaaa&quot;</span><br><span class="line">Output: 4</span><br></pre></td></tr></table></figure>
+<p>可以分为两种情况，</p>
+<ol>
+<li>两边相同的字符被中间一个字符隔开，</li>
+<li>连续最长的Substring，从别处swap到边上。</li>
+</ol>
+<p>对于最长的char已经用完，在其余位置没有的情况，每次取值的时候，用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rs=max(rs,min(left+right+1,count[char]),</span><br><span class="line">rs=max(rs,min(LongSubstring+1,count[char]))</span><br></pre></td></tr></table></figure></p>
+<p>来避免。</p>
+<p>这道题在提交的过程中，如果用List来存放相同char的index，在之后的遍历过程中，用了多次<code>list.get(i)</code> 和 <code>list.get(i-1)</code> 来判断是否是连续的还是间隔了一个字符，如果list是LinkedList， 5.01%，494ms, 如果是ArrayList，则是51%，7ms, 很好理解，但是没想到会差距这么大，估计test case 中的string 很长，重复的有很多，导致每次get(i)都 O(n), 之后在做题的时候要注意这些细节。</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/String/" rel="tag"># String</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/09/1080-Insufficient-Nodes-in-Root-to-Leaf-Paths/" rel="next" title="1080 Insufficient Nodes in Root to Leaf Paths">
+                <i class="fa fa-chevron-left"></i> 1080 Insufficient Nodes in Root to Leaf Paths
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/12/背包/" rel="prev" title="背包">
+                背包 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -345,8 +460,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -441,6 +565,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1156-Swap-For-Longest-Repeated-Character-Substring"><span class="nav-number">1.</span> <span class="nav-text">1156. Swap For Longest Repeated Character Substring</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -578,6 +718,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.2"></script>
+
+
 
   
 
